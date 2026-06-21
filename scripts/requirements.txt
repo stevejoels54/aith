@@ -1,0 +1,3 @@
+# Dependencies for the offline dataset-analysis script (analyze_honeypot_data.py).
+# pandas : load the CSV datasets and compute the descriptive statistics.
+pandas
