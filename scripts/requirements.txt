@@ -1,3 +1,7 @@
-# Dependencies for the offline dataset-analysis script (analyze_honeypot_data.py).
-# pandas : load the CSV datasets and compute the descriptive statistics.
+# Dependencies for the offline analysis scripts.
+# pandas     : load the CSV datasets and compute descriptive statistics
+#              (analyze_honeypot_data.py).
+# matplotlib : plot the RAG vs ungrounded accuracy chart
+#              (compare_rag_vs_ungrounded.py).
 pandas
+matplotlib

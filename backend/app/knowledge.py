@@ -134,6 +134,26 @@ SEED_DOCS = [
         "weakness.",
     },
     {
+        "id": "CVE-2018-10561/CVE-2018-10562",
+        "source": "CVE",
+        "title": "Dasan GPON home router remote code execution",
+        "text": "Dasan/Zhone GPON home routers have an authentication bypass "
+        "(CVE-2018-10561, reached by appending ?images/ to a URL) and a command "
+        "injection in the diagnostic ping feature (CVE-2018-10562). Chained, "
+        "they give unauthenticated remote code execution over the web interface "
+        "(often ports 8080/443). Widely exploited by Mirai and Gafgyt variants.",
+    },
+    {
+        "id": "CVE-2014-8361",
+        "source": "CVE",
+        "title": "Realtek SDK miniigd UPnP command injection",
+        "text": "The Realtek SDK miniigd UPnP SOAP service, used in many routers "
+        "and IoT devices, allows remote command injection via a crafted "
+        "NewInternalClient value in an AddPortMapping SOAP request (often on "
+        "port 52869), leading to remote code execution. Exploited by numerous "
+        "IoT botnets.",
+    },
+    {
         "id": "CWE-798",
         "source": "CWE",
         "title": "Use of hard-coded credentials",

@@ -111,9 +111,12 @@ def analyze_attack(event: Event) -> tuple[AttackAnalysis, list[str]]:
     # --- RETRIEVAL (the "R" in RAG) ---
     # Build a short query describing the attack, then fetch the most relevant
     # notes from the threat-intel knowledge base.
+    # Key the retrieval on the actual payload/port rather than assuming "Telnet",
+    # so non-Telnet exploits (e.g. UPnP/HTTP router exploits) retrieve the right
+    # notes instead of always pulling back generic brute-force notes.
     query = (
-        f"IoT honeypot Telnet attack on port {event.port}. "
-        f"Bytes the attacker sent: {event.data!r}"
+        f"Honeypot capture on port {event.port}. "
+        f"Bytes/payload the client sent: {event.data!r}"
     )
     docs = retrieve_context(query, k=3)
     context_block = "\n".join(
