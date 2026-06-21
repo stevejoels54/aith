@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+venv/
+
+# Local database file (regenerated on startup; don't commit captured data)
+*.db
+
+# Secrets — your real API key lives here; NEVER commit it
+.env
+
+# Local vector store (rebuilt from knowledge.py on startup)
+chroma_db/
+
+# Editor / OS noise
+.DS_Store
+.vscode/
+.idea/
+
+# ai related files
+*.log
+CLAUDE.md
+
+# Large datasets for the analysis script (place locally; see data/README.md)
+data/*.csv
+
