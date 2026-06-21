@@ -1,0 +1,5 @@
+# Dashboard dependencies.
+# streamlit : the web-UI framework that renders this dashboard.
+# requests  : used to call the FastAPI backend's REST API over HTTP.
+streamlit
+requests
