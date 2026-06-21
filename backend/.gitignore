@@ -1,0 +1,48 @@
+# ---------------------------------------------------------------------------
+# .gitignore for the honeypot backend (FastAPI + RAG)
+#
+# Anything matched here is deliberately kept OUT of git. The reasons fall into
+# three buckets: it is generated automatically, it is secret, or it is runtime
+# data that does not belong in source control.
+# ---------------------------------------------------------------------------
+
+# --- Python virtual environment -------------------------------------------
+# Big, machine-specific, and fully recreated with:
+#   python -m venv .venv && pip install -r requirements.txt
+# So we never commit it.
+.venv/
+venv/
+env/
+
+# --- Compiled Python bytecode ---------------------------------------------
+# Created automatically every time the code runs; regenerated on demand.
+__pycache__/
+*.py[cod]
+
+# --- Secrets ---------------------------------------------------------------
+# Your Anthropic API key (and any other credentials) live in a .env file.
+# IMPORTANT: keeping this out of git is what stops the key from leaking.
+.env
+.env.*
+!.env.example
+
+# --- Runtime data ----------------------------------------------------------
+# The SQLite event store is created when the app runs. It holds captured
+# attacks, not code, so it is rebuilt locally rather than tracked.
+*.db
+*.sqlite
+*.sqlite3
+
+# --- RAG vector store ------------------------------------------------------
+# The Chroma index is built locally from the threat-intel knowledge base.
+chroma/
+chroma_db/
+.chroma/
+
+# --- Logs ------------------------------------------------------------------
+*.log
+
+# --- OS / editor cruft -----------------------------------------------------
+.DS_Store
+.idea/
+.vscode/

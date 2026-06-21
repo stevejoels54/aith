@@ -1,0 +1,16 @@
+# Backend dependencies — kept minimal and widely used (see CLAUDE.md).
+#
+# fastapi   : the web framework that defines our endpoints.
+# uvicorn   : the server that actually runs the FastAPI app. [standard] adds
+#             a few common extras (faster reloading, websockets, etc.).
+# sqlmodel  : the ORM we use to talk to SQLite. It is built on top of
+#             SQLAlchemy + Pydantic, both of which it installs for us.
+# anthropic : the official Claude SDK — the AI threat-analysis step uses it.
+# python-dotenv : loads your API key from a local .env file (kept out of git).
+# chromadb  : the local vector store for the RAG knowledge base (MITRE/CVE notes).
+fastapi
+uvicorn[standard]
+sqlmodel
+anthropic
+python-dotenv
+chromadb
